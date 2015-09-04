@@ -4,14 +4,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF28AFE6-A0F9-447E-B3FF-6CB72A1DCB7E}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3BD76840-069A-4B2A-9F70-F7ABBC9653FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D770E78E-98AB-4701-A2B0-63A9B0A68696}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{37787B14-62DB-4598-ADE4-800EAC1CB798}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Deputy", "src\Deputy\Deputy.xproj", "{12A19233-6CA1-45FE-A251-E6A8252A1FE5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Deputy.UnitTests", "tests\Deputy.UnitTests\Deputy.UnitTests.xproj", "{1687A91F-E87E-4958-9577-CA5A4E1E5082}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,11 +29,16 @@ Global
 		{12A19233-6CA1-45FE-A251-E6A8252A1FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12A19233-6CA1-45FE-A251-E6A8252A1FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12A19233-6CA1-45FE-A251-E6A8252A1FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1687A91F-E87E-4958-9577-CA5A4E1E5082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1687A91F-E87E-4958-9577-CA5A4E1E5082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1687A91F-E87E-4958-9577-CA5A4E1E5082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1687A91F-E87E-4958-9577-CA5A4E1E5082}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{12A19233-6CA1-45FE-A251-E6A8252A1FE5} = {3BD76840-069A-4B2A-9F70-F7ABBC9653FF}
+		{1687A91F-E87E-4958-9577-CA5A4E1E5082} = {D770E78E-98AB-4701-A2B0-63A9B0A68696}
 	EndGlobalSection
 EndGlobal

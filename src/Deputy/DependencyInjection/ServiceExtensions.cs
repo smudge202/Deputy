@@ -21,7 +21,8 @@ namespace Deputy.DependencyInjection
 
         internal static IServiceCollection AddDefaultServices(this IServiceCollection services)
         {
-            services.TryAddTransient(typeof(IMailbox<>), typeof(InMemoryTransientMailbox<>));
+            // TODO :: Investigate why TryAddTransient throws a missing method exception: http://puu.sh/k06BU/aa1f262461.png
+            services.AddTransient(typeof(IMailbox<>), typeof(InMemoryTransientMailbox<>));
 
             return services;
         }

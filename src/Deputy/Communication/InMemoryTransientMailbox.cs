@@ -43,7 +43,13 @@ namespace Deputy.Communication
                 }
             }
 
-            return Disposable.Create(() => _mailboxSubscribers.Remove(observer));
+            return Disposable.Create(() => {
+
+                lock(_mailboxSubscribers)
+                    _mailboxSubscribers.Remove(observer);
+
+                observer.OnCompleted();
+            });
         }
     }
 }

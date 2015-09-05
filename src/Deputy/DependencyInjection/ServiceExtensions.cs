@@ -23,6 +23,9 @@ namespace Deputy.DependencyInjection
         {
             // TODO :: Investigate why TryAddTransient throws a missing method exception: http://puu.sh/k06BU/aa1f262461.png
             services.AddTransient(typeof(IMailbox<>), typeof(InMemoryTransientMailbox<>));
+            services.AddTransient<IMailboxCreator, MailboxCreator>();
+            services.AddTransient<IMailboxHost, MailboxHost>();
+            services.AddTransient<IMailboxSubscriptionFactory, MailboxSubscriptionFactory>();
 
             return services;
         }

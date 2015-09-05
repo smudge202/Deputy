@@ -1,15 +1,17 @@
 ﻿{
-  "version": "1.0.0-*",
-  "description": "Deputy Class Library",
+  "version": "1.0.0",
+  "description": "Deputy is a lightweight actor system that is designed specifically for .Net Core",
   "authors": [ "sblackler" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
-
+  "tags": [ "Actor", "Actor System", "Deputy" ],
+  "projectUrl": "https://github.com/sblackler/Deputy",
+  "licenseUrl": "https://github.com/sblackler/Deputy/blob/dev/LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sblackler/Deputy"
+  },
   "dependencies": {
     "Microsoft.Framework.DependencyInjection": "1.0.0-beta6-*"
   },
-
   "frameworks": {
     "dotnet": { }
   }

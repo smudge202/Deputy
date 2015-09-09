@@ -7,7 +7,7 @@ namespace Deputy.UnitTests
 {
     public class ActorSystemTests
     {
-        internal static ActorSystem CreateTarget(IServiceCollection services = null, string name = null) => new ActorSystem(services, name);
+        internal static ActorSystem CreateTarget(IServiceProvider services = null, string name = null) => new ActorSystem(services, name);
 
         public class Constructor
         {
@@ -25,7 +25,7 @@ namespace Deputy.UnitTests
             [WithValues(" ")]
             public void GivenAnInvalidNameThenThrowArgumentNullException(string name)
             {
-                Action act = () => CreateTarget(services: Utils.ServiceCollection.Create(), name: name);
+                Action act = () => CreateTarget(services: Utils.ServiceCollection.Create().BuildServiceProvider(), name: name);
 
                 act.ShouldThrow<ArgumentNullException>();
             }
@@ -34,7 +34,7 @@ namespace Deputy.UnitTests
             public void GivenAValidNameThenTheNamePropertyShouldBeSetCorrectly()
             {
                 const string actorSystemName = "DefaultActorSystem";
-                var actorSystem = CreateTarget(services: Utils.ServiceCollection.Create(), name: actorSystemName);
+                var actorSystem = CreateTarget(services: Utils.ServiceCollection.Create().BuildServiceProvider(), name: actorSystemName);
 
                 actorSystem.Name.Should().Be(actorSystemName);
 

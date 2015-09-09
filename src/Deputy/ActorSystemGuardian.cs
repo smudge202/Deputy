@@ -8,8 +8,8 @@ namespace Deputy
     public static class ActorSystemGuardian
     {
         private static readonly ConcurrentDictionary<string, IActorSystem> _knownActorSystems = new ConcurrentDictionary<string, IActorSystem>();
-        public static IActorSystem CreateActorSystem(IServiceCollection services) => CreateActorSystem(services, "DefaultActorSystem");
-        public static IActorSystem CreateActorSystem(IServiceCollection services, string name) => _knownActorSystems.GetOrAdd(name, key => new ActorSystem(services, key));
+        public static IActorSystem CreateActorSystem(IServiceCollection services) => _knownActorSystems.GetOrAdd("DefaultActorSystem", key => new ActorSystem(services?.BuildServiceProvider()));
+        public static IActorSystem CreateActorSystem(IServiceCollection services, string name) => _knownActorSystems.GetOrAdd(name, key => new ActorSystem(services?.BuildServiceProvider(), key));
         public static void Shutdown(string name)
         {
             if (string.IsNullOrWhiteSpace(name))

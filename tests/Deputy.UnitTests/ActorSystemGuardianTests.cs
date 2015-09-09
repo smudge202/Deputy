@@ -33,7 +33,7 @@ namespace Deputy.UnitTests
             {
                 var actorSystem = ActorSystemGuardian.CreateActorSystem(ServiceCollection.Create());
 
-                actorSystem.Name.Should().Be("DefaultActorSystem");
+                actorSystem.Name.Should().Be(default(string));
 
                 actorSystem.Shutdown();
             }
